@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+body {
+  font-family: "Anton", sans-serif;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  color: #e2e8f0;
+}
+.gradient-section {
+  /* Set the background to a radial gradient */
+  background: radial-gradient(circle, white 0%, black 100%);
+
+  /* Center the gradient at a specific position using background-position */
+  // background-position: top center; /* Adjust as per your layout */
+  /* Ensure the gradient covers the entire section */
+  // background-size: cover;
+}
+.bg-pos {
+  background-position: bottom 40% center;
+}
+
+.button-hover:hover {
+  background-color: #e2e8f0;
+  color: #020202;
+  transition: 0.2s ease-in-out;
+}
