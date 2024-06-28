@@ -1,7 +1,9 @@
-import Navbar from "../components/Navbar";
+import AccordionComponent from "../components/AccordionComponent";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import SliderComponent from "../components/SliderComponent";
 
 // Constants
 import {
@@ -11,17 +13,44 @@ import {
   intenseTeamBattlesImg,
   regularServerUpdatesImg,
   inGameCashImg,
+  newsImg,
+  newsImg2,
+  // Mobile
+  latestNewsMobileImg,
+  intenseTeamBattlesMobileImg,
+  regularServerUpdatesMobileImg,
+  inGameCashMobileImg,
 
   // Logo
   navLogo,
   companyLogo,
+  fbLogo,
+  discordLogo,
+  ytLogo,
+  tiktokLogo,
+
+  // Links
+  logIn,
+  signUp,
+  fbUrl,
+  discordUrl,
+  ytUrl,
+  tiktokUrl,
+
+  // Misc
+  chevronDown,
+  downloadLink,
+  purchaseLink,
 } from "../constants";
 
 export {
-  Navbar,
+  AccordionComponent,
   Button,
   Card,
   Footer,
+  Navbar,
+  SliderComponent,
+
   // Constants
   bannerImg,
   latestNewsImg,
@@ -29,7 +58,31 @@ export {
   regularServerUpdatesImg,
   inGameCashImg,
   faqsImg,
+  newsImg,
+  newsImg2,
+  // Mobile
+  latestNewsMobileImg,
+  intenseTeamBattlesMobileImg,
+  regularServerUpdatesMobileImg,
+  inGameCashMobileImg,
   // Logo
   navLogo,
   companyLogo,
+  fbLogo,
+  discordLogo,
+  ytLogo,
+  tiktokLogo,
+
+  // Links
+  logIn,
+  signUp,
+  fbUrl,
+  discordUrl,
+  ytUrl,
+  tiktokUrl,
+
+  // Misc
+  chevronDown,
+  downloadLink,
+  purchaseLink,
 };

@@ -1,8 +1,12 @@
+import { useState, useEffect } from "react";
 import {
-  Navbar,
+  AccordionComponent,
   Button,
   Card,
   Footer,
+  Navbar,
+  SliderComponent,
+
   // Constants
   bannerImg,
   latestNewsImg,
@@ -10,76 +14,221 @@ import {
   regularServerUpdatesImg, 
   inGameCashImg,
   faqsImg,
+  newsImg,
+  newsImg2,
+
+  // Mobile
+  latestNewsMobileImg,
+  intenseTeamBattlesMobileImg,
+  regularServerUpdatesMobileImg,
+  inGameCashMobileImg,
+
+  // Misc
+  downloadLink,
+  purchaseLink,
 } from "../imports";
 
 const Home = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleShownImage = section => {
+    let backgroundImageUrl = ''; 
+
+    if (typeof section !== 'string') {
+      section = section.toString();
+    }
+
+    switch (section) {
+      case "latest-news":
+        backgroundImageUrl = isSmallScreen ? latestNewsMobileImg : latestNewsImg;
+        break;
+      
+      case "team-battles":
+        backgroundImageUrl = isSmallScreen ? intenseTeamBattlesMobileImg : intenseTeamBattlesImg;
+        break;
+      
+      case "regular-updates":
+        backgroundImageUrl = isSmallScreen ? regularServerUpdatesMobileImg : regularServerUpdatesImg;
+        break;
+      
+      case "in-game-cash":
+        backgroundImageUrl = isSmallScreen ? inGameCashMobileImg : inGameCashImg;
+        break;
+
+      default:
+        break;
+    }
+
+    return backgroundImageUrl;
+  }
+
   return (
     <>
       {/* Banner */}
       <div
-        className="relative bg-cover bg-no-repeat bg-pos w-full h-screen"
+        className="bg-cover bg-no-repeat bg-pos w-full h-screen"
         style={{ backgroundImage: `url(${bannerImg})` }}>
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#020202] via-transparent to-[#020202]">
-          <Navbar />
-          
-          {/* Banner Content */}
-          <div className="flex flex-col items-center justify-center pt-[120px] gap-y-5">
-            <h3 className="text-5xl">SOLDIER FRONT</h3>
-            <p className="w-[460px] text-base text-center pb-2">
-              The genuine military FPS game that enjoys the game by using the
-              exclusive equipments and weapons of the special force by livening
-              up the characteristics of the special force that is the finest of
-              modern war.
-            </p>
-            <Button name="DOWNLOAD NOW" />
-          </div>
+
+        <Navbar />
+
+        {/* Banner Content */}
+        <div className="flex flex-col items-center justify-center pt-[120px] gap-y-5">
+          <h2>SOLDIER FRONT</h2>
+          <p className="max-w-[340px] sm:max-w-[460px] text-center pb-2">
+            The genuine military FPS game that enjoys the game by using the
+            exclusive equipments and weapons of the special force by livening
+            up the characteristics of the special force that is the finest of
+            modern war.
+          </p>
+          <Button name="DOWNLOAD NOW" link={downloadLink} />
         </div>
       </div>
 
       {/* LATEST NEWS */}
       <div
-        className="relative bg-cover bg-no-repeat w-full h-screen"
-        style={{ backgroundImage: `url(${latestNewsImg})` }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#020202] via-transparent to-[#020202]">
-          <h3 className="text-[50px]">LATEST NEWS</h3>
-          <Card />
+        className="bg-cover bg-no-repeat bg-center w-full h-screen"
+        style={{ backgroundImage: `url(${handleShownImage("latest-news")})` }}>
+        
+        <div className="flex flex-col justify-start gap-y-10 pt-16 sm:pt-10 h-screen">
+          <h2 className="pl-5">LATEST NEWS</h2>
+
+          {/* Scrollable Cards */}
+          <div className="flex justify-center items-center">
+            <SliderComponent>
+              <Card 
+                imgUrl={newsImg} 
+                header="July Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+              <Card 
+                imgUrl={newsImg2} 
+                header="June Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+              <Card 
+                imgUrl={newsImg} 
+                header="May Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+              <Card 
+                imgUrl={newsImg2} 
+                header="May Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+              <Card 
+                imgUrl={newsImg} 
+                header="May Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+              <Card 
+                imgUrl={newsImg2} 
+                header="May Halycon Patch Release Notes V2.3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+              />
+            </SliderComponent>
+          </div>
         </div>
       </div>
 
-
       {/* INTENSE TEAM BATTLES */}
       <div
-        className="bg-cover bg-no-repeat w-full h-screen"
-        style={{ backgroundImage: `url(${intenseTeamBattlesImg})` }}>
+        className="bg-cover bg-no-repeat sm:bg-top w-full h-screen"
+        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}>
+        
+        <div className="flex flex-col justify-center pl-5 h-screen">
+          <div className="flex flex-col justify-center">
 
-
+            <h1 className="leading-snug pb-10 max-w-[370px] sm:max-w-[460px]">INTENSE TEAM BATTLES</h1>
+            <p className="max-w-[320px] sm:max-w-[380px]">
+              The genuine military FPS game that enjoys the game by using the
+              exclusive equipments and weapons of the special force by livening
+              up the characteristics of the special force that is the finest of
+              modern war.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* REGULAR SERVER UPDATES */}
       <div
         className="bg-cover bg-no-repeat w-full h-screen"
-        style={{ backgroundImage: `url(${regularServerUpdatesImg})` }}>
+        style={{ backgroundImage: `url(${handleShownImage("regular-updates")})` }}>
 
-
+        <div className="flex flex-col justify-center sm:items-end pl-5 sm:pr-5 h-screen">
+          <h1 className="leading-snug pt-12 sm:pt-0 sm:text-right pb-10 max-w-[370px] sm:max-w-[460px]">REGULAR SERVER UPDATES</h1>
+          <p className="max-w-[320px] sm:max-w-[380px] sm:text-right">
+            The genuine military FPS game that enjoys the game by using the
+            exclusive equipments and weapons of the special force by livening
+            up the characteristics of the special force that is the finest of
+            modern war.
+          </p>
+        </div>
       </div>
       
       {/* IN GAME CASH */}
       <div
         className="bg-cover bg-no-repeat bg-center w-full h-screen"
-        style={{ backgroundImage: `url(${inGameCashImg})` }}>
-
-
+        style={{ backgroundImage: `url(${handleShownImage("in-game-cash")})` }}>
+        
+        <div className="flex flex-col justify-center items-center h-screen">
+          <h2 className="pt-16 pb-5 px-2">NEED IN-GAME CASH?</h2>
+          <p className="max-w-[350px] sm:max-w-[420px] text-base sm:text-lg text-center pb-10">
+            You can now top up CASH in SF Reborn with multiple supported payment
+            methods around the world!
+          </p>
+          <Button name="PURCHASE" link={purchaseLink} />
+        </div>
       </div>
-
-
-
 
       {/* FAQS */}
       <div
-        className="relative bg-cover bg-no-repeat bg-pos w-full h-screen"
+        className="bg-cover bg-no-repeat bg-pos w-full h-screen"
         style={{ backgroundImage: `url(${faqsImg})` }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#020202] via-transparent to-[#020202]"></div>
+
+        <div className="flex justify-center items-center">
+          <h1 className="pt-16 pb-10">FAQS</h1>
+        </div>
+        
+        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2 px-2 sm:px-14">
+          <div className="flex flex-col">
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <AccordionComponent
+              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+          </div>
+        </div>
       </div>
 
       <Footer/>
