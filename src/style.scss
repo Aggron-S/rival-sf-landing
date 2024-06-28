@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@layer base {
+  body {
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    @apply not-italic tracking-wider text-[#e2e8f0];
+
+    p {
+      @apply font-normal text-sm sm:text-base text-slate-300;
+    }
+    h1 {
+      @apply text-4xl sm:text-5xl;
+    }
+    h2 {
+      @apply text-4xl sm:text-5xl;
+    }
+    h4 {
+      @apply text-lg sm:text-xl;
+    }
+    h5 {
+      @apply text-base sm:text-lg;
+    }
+  }
+}
+
+@layer components {
+  .bg-pos {
+    background-position: bottom 40% center;
+  }
+
+  .button-text {
+    @apply text-base sm:text-xl;
+  }
+
+  .button-hover:hover {
+    @apply bg-[#e2e8f0] text-[#020202] transition duration-200 ease-in-out;
+  }
+  
+  // Collapsible
+}
