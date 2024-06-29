@@ -16,6 +16,7 @@ import {
   newsImg,
   newsImg2,
   // Mobile
+  faqsMobileImg,
   latestNewsMobileImg,
   intenseTeamBattlesMobileImg,
   regularServerUpdatesMobileImg,
@@ -61,6 +62,7 @@ export {
   newsImg,
   newsImg2,
   // Mobile
+  faqsMobileImg,
   latestNewsMobileImg,
   intenseTeamBattlesMobileImg,
   regularServerUpdatesMobileImg,

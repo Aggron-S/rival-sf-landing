@@ -1,7 +1,0 @@
-.slick-slide {
-  margin-right: 10% /* Adjust as needed */
-}
-
-.slick-slide:last-child {
-  margin-right: 0; /* Remove margin from the last slide */
-}

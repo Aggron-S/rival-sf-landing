@@ -18,6 +18,7 @@ import {
   newsImg2,
 
   // Mobile
+  faqsMobileImg,
   latestNewsMobileImg,
   intenseTeamBattlesMobileImg,
   regularServerUpdatesMobileImg,
@@ -37,8 +38,8 @@ const Home = () => {
     };
     handleResize(); // Initial check
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => window.removeEventListener("resize", handleResize);    // Cleanup function
+  }, []);   // Empty dependency array means this effect runs only once on mount and cleans up on unmount
 
   const handleShownImage = section => {
     let backgroundImageUrl = ''; 
@@ -62,6 +63,10 @@ const Home = () => {
       
       case "in-game-cash":
         backgroundImageUrl = isSmallScreen ? inGameCashMobileImg : inGameCashImg;
+        break;
+
+      case "faqs":
+        backgroundImageUrl = isSmallScreen ? faqsMobileImg : faqsImg;
         break;
 
       default:
@@ -191,40 +196,40 @@ const Home = () => {
 
       {/* FAQS */}
       <div
-        className="bg-cover bg-no-repeat bg-pos w-full h-screen"
-        style={{ backgroundImage: `url(${faqsImg})` }}>
+        className="bg-cover bg-no-repeat w-full h-full sm:h-screen"
+        style={{ backgroundImage: `url(${handleShownImage("faqs")})` }}>
 
         <div className="flex justify-center items-center">
           <h1 className="pt-16 pb-10">FAQS</h1>
         </div>
         
-        <div className="grid grid-cols-1 gap-x-12 sm:grid-cols-2 px-2 sm:px-14">
+        <div className="grid grid-cols-1 gap-x-12 px-2 pb-20 sm:grid-cols-2 sm:pb-0 sm:px-14">
           <div className="flex flex-col">
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
           </div>
 
           <div className="flex flex-col">
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
             <AccordionComponent
-              header="Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
+              header="Lorem ipsum dolor sit amet?"
               content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             />
           </div>
