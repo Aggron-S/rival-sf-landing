@@ -43,5 +43,5 @@ export const tiktokUrl = "https://www.tiktok.com/@soldierfrontreborn";
 
 // Misc
 export const chevronDown = "/assets/svg/chevron-down.svg";
-export const downloadLink = "https://rivalsf.com/download/";
+export const downloadLink = "https://launcher-patch.rivalsf.com/installer/RivalSF_Installer_2.exe";
 export const purchaseLink = "https://account.sfreborn.com/";
