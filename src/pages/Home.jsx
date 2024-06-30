@@ -24,10 +24,15 @@ import {
   regularServerUpdatesMobileImg,
   inGameCashMobileImg,
 
+  // Description
+  intenseTeamBattlesDescription,
+  regularServerUpdatesDescription,
+
   // Misc
   downloadLink,
   purchaseLink,
 } from "../imports";
+import latestNewsData from "../data/latest-news.json";
 
 const Home = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -80,8 +85,8 @@ const Home = () => {
     <>
       {/* Banner */}
       <div
-        className="bg-cover bg-no-repeat bg-pos w-full h-screen"
-        style={{ backgroundImage: `url(${bannerImg})` }}>
+        className="bg-cover bg-no-repeat sm:bg-top w-full h-screen"
+        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}>
 
         <Navbar />
 
@@ -109,43 +114,21 @@ const Home = () => {
           {/* Scrollable Cards */}
           <div className="flex justify-center items-center">
             <SliderComponent>
-              <Card 
-                imgUrl={newsImg} 
-                header="July Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
-              <Card 
-                imgUrl={newsImg2} 
-                header="June Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
-              <Card 
-                imgUrl={newsImg} 
-                header="May Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
-              <Card 
-                imgUrl={newsImg2} 
-                header="May Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
-              <Card 
-                imgUrl={newsImg} 
-                header="May Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
-              <Card 
-                imgUrl={newsImg2} 
-                header="May Halycon Patch Release Notes V2.3"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
-              />
+              {latestNewsData['latest-news'].map((item, index) => (
+                <Card
+                  key={index} 
+                  imgUrl={item.image} 
+                  header={item.header}
+                  description={item.description}
+                />
+              ))}
             </SliderComponent>
           </div>
         </div>
       </div>
 
       {/* INTENSE TEAM BATTLES */}
-      <div
+      {/* <div
         className="bg-cover bg-no-repeat sm:bg-top w-full h-screen"
         style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}>
         
@@ -154,14 +137,11 @@ const Home = () => {
 
             <h1 className="leading-snug pb-10 max-w-[370px] sm:max-w-[460px]">INTENSE TEAM BATTLES</h1>
             <p className="max-w-[320px] sm:max-w-[380px]">
-              The genuine military FPS game that enjoys the game by using the
-              exclusive equipments and weapons of the special force by livening
-              up the characteristics of the special force that is the finest of
-              modern war.
+              {intenseTeamBattlesDescription}
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* REGULAR SERVER UPDATES */}
       <div
@@ -171,10 +151,7 @@ const Home = () => {
         <div className="flex flex-col justify-center sm:items-end pl-5 sm:pr-5 h-screen">
           <h1 className="leading-snug pt-12 sm:pt-0 sm:text-right pb-10 max-w-[370px] sm:max-w-[460px]">REGULAR SERVER UPDATES</h1>
           <p className="max-w-[320px] sm:max-w-[380px] sm:text-right">
-            The genuine military FPS game that enjoys the game by using the
-            exclusive equipments and weapons of the special force by livening
-            up the characteristics of the special force that is the finest of
-            modern war.
+            {regularServerUpdatesDescription}
           </p>
         </div>
       </div>
@@ -200,38 +177,28 @@ const Home = () => {
         style={{ backgroundImage: `url(${handleShownImage("faqs")})` }}>
 
         <div className="flex justify-center items-center">
-          <h1 className="pt-16 pb-10">FAQS</h1>
+          <h1 className="pt-16 pb-10 sm:pt-28">FAQS</h1>
         </div>
         
         <div className="grid grid-cols-1 gap-x-12 px-2 pb-20 sm:grid-cols-2 sm:pb-0 sm:px-14">
           <div className="flex flex-col">
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
+            {latestNewsData['faqs-left'].map((item, index) => (
+              <AccordionComponent
+                key={index}
+                header={item.header}
+                content={item.description}
+              />
+            ))}
           </div>
 
           <div className="flex flex-col">
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
-            <AccordionComponent
-              header="Lorem ipsum dolor sit amet?"
-              content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
+            {latestNewsData['faqs-right'].map((item, index) => (
+              <AccordionComponent
+                key={index}
+                header={item.header}
+                content={item.description}
+              />
+            ))}
           </div>
         </div>
       </div>

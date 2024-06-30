@@ -15,6 +15,11 @@ export const intenseTeamBattlesMobileImg = "/assets/bg/mobile/intense-team-battl
 export const regularServerUpdatesMobileImg = "/assets/bg/mobile/regular-server-updates-mobile.png";
 export const inGameCashMobileImg = "/assets/bg/mobile/in-game-cash-mobile.png";
 
+// Description
+export const intenseTeamBattlesDescription = `The genuine military FPS game that enjoys the game by using the exclusive equipments and weapons of the special force by livening up the characteristics of the special force that is the finest of modern war.`;
+export const regularServerUpdatesDescription = `The genuine military FPS game that enjoys the game by using the exclusive equipments and weapons of the special force by livening up the characteristics of the special force that is the finest of modern war.`;
+
+
 
 // Logo
 export const navLogo = "/assets/logo/soldier-front-navbar-logo.png";
@@ -30,7 +35,7 @@ export const signUp = "https://account.rivalsf.com/auth/signup";
 
 // Socials
 export const fbUrl = "https://www.facebook.com/RebornGamesOfficial";
-export const discordUrl = "https://discord.sfreborn.com/";
+export const discordUrl = "https://discord.gg/rivalsf";
 export const ytUrl = "https://www.youtube.com/channel/UC_EsOC7g3lR0wTwmaal876w";
 export const tiktokUrl = "https://www.tiktok.com/@soldierfrontreborn";
 
@@ -38,5 +43,5 @@ export const tiktokUrl = "https://www.tiktok.com/@soldierfrontreborn";
 
 // Misc
 export const chevronDown = "/assets/svg/chevron-down.svg";
-export const downloadLink = "/";
+export const downloadLink = "https://rivalsf.com/download/";
 export const purchaseLink = "https://account.sfreborn.com/";

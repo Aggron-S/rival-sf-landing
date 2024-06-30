@@ -1,0 +1,56 @@
+{
+  "latest-news": [
+    {
+      "image": "/assets/bg/news-card-img.png",
+      "header": "July Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    },
+    {
+      "image": "/assets/bg/news-card-img2.png",
+      "header": "June Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    },
+    {
+      "image": "/assets/bg/news-card-img.png",
+      "header": "May Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    },
+    {
+      "image": "/assets/bg/news-card-img.png",
+      "header": "July Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    },
+    {
+      "image": "/assets/bg/news-card-img2.png",
+      "header": "June Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    },
+    {
+      "image": "/assets/bg/news-card-img.png",
+      "header": "May Halycon Patch Release Notes V2.3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum. Praesent suscipit erat risus. "
+    }
+  ],
+
+  "faqs-left": [
+    {
+      "header": "Lorem ipsum dolor sit amet?",
+      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+    },
+    {
+      "header": "Lorem ipsum dolor sit amet?",
+      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+    }
+  ],
+
+  "faqs-right": [
+    {
+      "header": "Lorem ipsum dolor sit amet?",
+      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+    },
+    {
+      "header": "Lorem ipsum dolor sit amet?",
+      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+    }
+  ]
+}

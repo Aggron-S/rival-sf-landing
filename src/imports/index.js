@@ -15,12 +15,17 @@ import {
   inGameCashImg,
   newsImg,
   newsImg2,
+
   // Mobile
   faqsMobileImg,
   latestNewsMobileImg,
   intenseTeamBattlesMobileImg,
   regularServerUpdatesMobileImg,
   inGameCashMobileImg,
+  
+  // Description
+  intenseTeamBattlesDescription,
+  regularServerUpdatesDescription,
 
   // Logo
   navLogo,
@@ -67,6 +72,9 @@ export {
   intenseTeamBattlesMobileImg,
   regularServerUpdatesMobileImg,
   inGameCashMobileImg,
+  // Description
+  intenseTeamBattlesDescription,
+  regularServerUpdatesDescription,
   // Logo
   navLogo,
   companyLogo,

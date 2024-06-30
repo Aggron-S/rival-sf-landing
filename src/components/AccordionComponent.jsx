@@ -21,9 +21,9 @@ const AccordionItem = ({ header, ...rest }) => (
   />
 );
 
-const AccordionComponent = ({ header, content }) => {
+const AccordionComponent = ({ key, header, content }) => {
   return (
-    <div className={styles.accordion}>
+    <div key={key} className={styles.accordion}>
       {/* `transitionTimeout` prop should be equal to the transition duration in CSS */}
       <Accordion transition transitionTimeout={250}>
         <AccordionItem header={header}>
