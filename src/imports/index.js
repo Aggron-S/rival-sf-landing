@@ -28,6 +28,7 @@ import {
   regularServerUpdatesDescription,
 
   // Logo
+  soldierFrontLogo,
   navLogo,
   companyLogo,
   fbLogo,
@@ -76,6 +77,7 @@ export {
   intenseTeamBattlesDescription,
   regularServerUpdatesDescription,
   // Logo
+  soldierFrontLogo,
   navLogo,
   companyLogo,
   fbLogo,

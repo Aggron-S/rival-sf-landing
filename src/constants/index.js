@@ -22,6 +22,7 @@ export const regularServerUpdatesDescription = `The genuine military FPS game th
 
 
 // Logo
+export const soldierFrontLogo = "/assets/logo/soldier-front-logo.png";
 export const navLogo = "/assets/logo/soldier-front-navbar-logo.png";
 export const companyLogo = "/assets/logo/reborn-games-logo.png";
 export const fbLogo = "/assets/logo/socials/facebook-white-icon.svg";

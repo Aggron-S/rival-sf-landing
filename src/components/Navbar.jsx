@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import { navLogo, logIn, signUp } from "../imports";
 
 const Navbar = () => {
@@ -19,17 +20,35 @@ const Navbar = () => {
     setIsShowSideMenu(!isShowSideMenu);
   };
 
+  // const scrollToSection = id => {
+  //   const bannerElement = document.getElementById(id);
+  //   console.log("ajdka")
+  //   if (bannerElement) {
+  //     bannerElement.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
+
   return (
     <div className="flex justify-between items-center px-3 sm:px-5 py-8">
-      <Link to={"/"}>
-        <img
-          className="w-[125px] sm:w-auto"
-          src={navLogo}
-          alt="Site Logo"
-        />
-      </Link>
+      <div className="flex justify-center items-center">
+        <Link to={"/"}>
+          <img
+            className="w-[125px] sm:w-auto pr-10"
+            src={navLogo}
+            alt="Site Logo"
+          />
+        </Link>
+        {!isSmallScreen && (
+          <>
+            {/* <HashLink to="/#banner" className="px-3 py-2 hover:text-white duration-200 ease-in-out">HOME</HashLink> */}
+            <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">HOME</Link>
+            <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">NEWS</Link>
+            <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">RANKING</Link>
+          </>
+        )}
+      </div>
 
-      <div className="flex justify-center items-center gap-x-2 pr-4">
+      <div className="flex justify-center items-center pr-4">
         {!isSmallScreen ? (
           <>
             <Link to={logIn} className="px-3 py-2 hover:text-white duration-200 ease-in-out">LOGIN</Link>
@@ -56,8 +75,13 @@ const Navbar = () => {
               <Link to={"/"}>
                 <img className="w-auto pb-10" src={navLogo} alt="Site Logo"/>
               </Link>
-              <Link to={logIn} className="py-3 hover:text-white duration-200 ease-in-out">LOGIN</Link>
-              <Link to={signUp} className="py-3 hover:text-white duration-200 ease-in-out">SIGN UP</Link>
+
+              <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">HOME</Link>
+              <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">NEWS</Link>
+              <Link to="#" className="px-3 py-2 hover:text-white duration-200 ease-in-out">RANKING</Link>
+
+              <Link to={logIn} className="px-3 py-2 hover:text-white duration-200 ease-in-out">LOGIN</Link>
+              <Link to={signUp} className="px-3 py-2 hover:text-white duration-200 ease-in-out">SIGN UP</Link>
             </div>
           </div>
         )}

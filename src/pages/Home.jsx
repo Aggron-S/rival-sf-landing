@@ -28,6 +28,9 @@ import {
   intenseTeamBattlesDescription,
   regularServerUpdatesDescription,
 
+  // Logo
+  soldierFrontLogo,
+
   // Misc
   downloadLink,
   purchaseLink,
@@ -86,12 +89,14 @@ const Home = () => {
       {/* Banner */}
       <div
         className="bg-cover bg-no-repeat sm:bg-top w-full h-screen"
-        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}>
+        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}
+        id="banner">
 
         <Navbar />
 
         {/* Banner Content */}
-        <div className="flex flex-col items-center justify-center pt-[120px] gap-y-5">
+        <div className="flex flex-col items-center justify-center pt-12 gap-y-1">
+          <img className="w-auto" src={soldierFrontLogo} alt="Soldier Front Logo" />
           <h2>SOLDIER FRONT</h2>
           <p className="max-w-[340px] sm:max-w-[460px] text-center pb-2">
             The genuine military FPS game that enjoys the game by using the
@@ -105,8 +110,8 @@ const Home = () => {
 
       {/* LATEST NEWS */}
       <div
-        className="bg-cover bg-no-repeat bg-center w-full h-screen"
-        style={{ backgroundImage: `url(${handleShownImage("latest-news")})` }}>
+        className="bg-cover bg-no-repeat w-full h-screen"
+        style={{ backgroundImage: `url(${handleShownImage("regular-updates")})` }}>
         
         <div className="flex flex-col justify-start gap-y-10 pt-16 sm:pt-10 h-screen">
           <h2 className="pl-5">LATEST NEWS</h2>
@@ -144,7 +149,7 @@ const Home = () => {
       </div> */}
 
       {/* REGULAR SERVER UPDATES */}
-      <div
+      {/* <div
         className="bg-cover bg-no-repeat w-full h-screen"
         style={{ backgroundImage: `url(${handleShownImage("regular-updates")})` }}>
 
@@ -154,7 +159,7 @@ const Home = () => {
             {regularServerUpdatesDescription}
           </p>
         </div>
-      </div>
+      </div> */}
       
       {/* IN GAME CASH */}
       <div
