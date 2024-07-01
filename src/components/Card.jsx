@@ -5,7 +5,7 @@ const Card = ({ key, imgUrl, header, description }) => {
         <div className="bg-cover bg-center w-[315px] h-[229px] sm:min-w-[407px] sm:min-h-[229px] transition-transform duration-300 transform group-hover:scale-105" style={{ backgroundImage: `url('${imgUrl}')` }}></div>
       </div>
       <h4>{header}</h4>
-      <p className="w-[330px]">{description}</p>
+      <p className="w-[330px] h-[100px] overflow-y-scroll scrollbar-custom">{description}</p>
     </div>
   );
 };
