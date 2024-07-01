@@ -34,23 +34,23 @@
 
   "faqs-left": [
     {
-      "header": "Lorem ipsum dolor sit amet?",
-      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+      "header": "Need in-game Cash?",
+      "description": "Create a ticket on the Rival SF Discord to buy in-game cash."
     },
     {
-      "header": "Lorem ipsum dolor sit amet?",
-      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+      "header": "Experiencing issues / bugs in game or in your account?",
+      "description": "Please contact us by Creating a Technical Support Ticket on the SF Rival Discord to help you."
     }
   ],
 
   "faqs-right": [
     {
-      "header": "Lorem ipsum dolor sit amet?",
-      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+      "header": "How can my account be suspended or terminated?",
+      "description": "If you break the rules, your account will be penalized!"
     },
     {
-      "header": "Lorem ipsum dolor sit amet?",
-      "description": "Nulla mattis lorem nisi, non mattis magna consectetur non. Aliquam auctor lorem ut finibus interdum."
+      "header": "My account has been scammed / hacked?",
+      "description": "Please be sure to send us a Support Ticket on our Discord Server and prepare proof of ownership. Our Support Team will advise you on how you can recover your account and assist you to temporarily block the scammed / hacked account if sufficient proof of ownership is provided."
     }
   ]
 }
