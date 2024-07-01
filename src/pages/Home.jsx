@@ -89,8 +89,7 @@ const Home = () => {
       {/* Banner */}
       <div
         className="bg-cover bg-no-repeat sm:bg-top w-full h-screen"
-        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}
-        id="banner">
+        style={{ backgroundImage: `url(${handleShownImage("team-battles")})` }}>
 
         <Navbar />
 
